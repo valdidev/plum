@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tame Formación - Despliegue</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: plum;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        max-width: 600px;
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+      }
+      h1 {
+        color: purple;
+      }
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: purple;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="effectContainer">
+      <h1>Tame Formación</h1>
+      <p>Bienvenido al proyecto de despliegue a producción.</p>
+      <button class="button" onclick="applyRandomEffect()">
+        Generar efecto
+      </button>
+    </div>
+    <script>
+      function applyRandomEffect() {
+        const effects = [
+          "rotate(10deg)",
+          "scale(1.2)",
+          "translateX(20px)",
+          "translateY(-10px)",
+          "skew(10deg)",
+          "opacity(0.5)",
+        ];
+        const randomEffect =
+          effects[Math.floor(Math.random() * effects.length)];
+        document.getElementById("effectContainer").style.transform =
+          randomEffect;
+      }
+    </script>
+  </body>
+</html>
